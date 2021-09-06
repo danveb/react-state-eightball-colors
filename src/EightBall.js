@@ -17,12 +17,20 @@ const EightBall = ({answers}) => {
         setMsg(msg)
         setColor(color) 
     }
+    // reset button to initial state
+    const resetClick = () => {
+        setMsg('Think of a Question')
+        setColor('black')
+    }
     return (
         // click on the EightBall to change color/msg
         // inline style to change backgroundColor
+        <>
         <div className="EightBall" onClick={handleClick} style={{ backgroundColor: color}}>
             <p>{msg}</p>
         </div>
+        <button onClick={resetClick}>RESET</button>
+        </>
     )
 }
 
